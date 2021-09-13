@@ -1,7 +1,7 @@
 // Import dataset
-// import { data } from "data.js";
+const data = require("./src/store/data.js");
 
-// console.log(`data`, data);
+console.log(`data`, data);
 
 //FEATURE Filter option
 const filterData = (args, data) => {
@@ -13,17 +13,14 @@ const countData = (data) => {
   console.log(`FEATURE`, "This is count feature");
 };
 
-//Todo: Handle Args
-const args = process.argv;
-const params = args[2];
+//Get arguments
+let args = process.argv[2];
 
-switch (params) {
-  case "--filter=ry":
-    filterData();
-    break;
-  case "--count":
-    countData();
-    break;
-  default:
-    break;
+//Handle arguments
+if (args && args.includes("--filter")) {
+  filterData();
+} else if (args && args.includes("--count")) {
+  countData();
+} else {
+  console.log("Incorrect parsed arguments");
 }
