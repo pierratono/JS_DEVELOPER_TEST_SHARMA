@@ -5,10 +5,16 @@ const filterData = (params, data) => {
   console.log(`params`, params);
 };
 
-//FEATURE Count
+//Todo: Feat Count
 const countData = (data) => {
+  const { data: rawData } = data;
   console.log(`FEATURE`, "This is count feature");
-  console.log(`data`, data);
+
+  const animalCounts = rawData.map((animalCount) => {
+    obj: animalCount;
+  });
+
+  return console.log(`data`, animalCounts);
 };
 
 module.exports = {
