@@ -10,11 +10,15 @@ const countData = (data) => {
   const { data: rawData } = data;
   console.log(`FEATURE`, "This is count feature");
 
-  const animalCounts = rawData.map((animalCount) => {
-    obj: animalCount;
-  });
+  const animalCounts = rawData.map((animalCount) => ({
+    name: `${animalCount.name} [${animalCount.people.length}]`,
+    people: animalCount.people.map((person) => ({
+      name: `${person.name} [${person.animals.length}]`,
+      animals: person.animals,
+    })),
+  }));
 
-  return console.log(`data`, animalCounts);
+  return JSON.stringify(animalCounts, undefined, 2);
 };
 
 module.exports = {
