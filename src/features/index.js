@@ -5,10 +5,9 @@ const filterData = (params, data) => {
   console.log(`params`, params);
 };
 
-//Todo: Feat Count
+//-- count
 const countData = (data) => {
   const { data: rawData } = data;
-  console.log(`FEATURE`, "This is count feature");
 
   const animalCounts = rawData.map((animalCount) => ({
     name: `${animalCount.name} [${animalCount.people.length}]`,
