@@ -40,7 +40,7 @@ const countData = (data) => {
     })),
   }));
 
-  return JSON.stringify(animalCounts, undefined, 2);
+  return animalCounts;
 };
 
 module.exports = {
